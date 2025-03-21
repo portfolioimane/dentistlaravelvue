@@ -14,7 +14,7 @@ use Stripe\PaymentIntent;
 use App\Models\BuisnessHour;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 use Carbon\Carbon;
-
+use App\Jobs\SendBookingReminder;  // Make sure to import the SendBookingReminder job
 class BookingController extends Controller
 {
     private $paypal;
@@ -120,6 +120,8 @@ public function create(Request $request)
         'paid_amount' => $paidAmount, // Set paid amount to 50 if payment is via Stripe/PayPal
         'user_id' => $userId, // Add the user_id for the authenticated user
     ]);
+
+
 
     return response()->json([
         'message' => 'Booking initiated successfully!',

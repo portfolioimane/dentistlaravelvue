@@ -1,6 +1,6 @@
 <template>
   <div class="patient-histories">
-    <h1>Manage Patient Histories for Patient: {{ patientName }}</h1>
+    <h1>Manage Patient Histories for : {{ patientName }}</h1>
     
     <button class="btn primary" @click="addPatientHistory">Add New History</button>
     

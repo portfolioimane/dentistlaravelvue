@@ -14,25 +14,25 @@
 
 <script>
 export default {
-  name: "ServicesSection",
+  name: "DentalServicesSection",
   data() {
     return {
       services: [
         {
-          title: "Digital Marketing",
-          icon: "fas fa-bullhorn", // FontAwesome icon for Digital Marketing
-          description: "Boost your business with targeted digital marketing strategies and campaigns.",
+          title: "High-Quality Teeth Whitening",
+          icon: "fas fa-tooth", // FontAwesome icon for Teeth Whitening
+          description: "Achieve a brilliant, white smile with our safe and effective teeth whitening treatments, designed to provide long-lasting results and improve your confidence.",
         },
         {
-          title: "Sales Growth",
-          icon: "fas fa-chart-line", // FontAwesome icon for Sales Growth
-          description: "Drive sales and increase revenue with proven sales growth tactics and tools.",
+          title: "Expert Root Canal Treatment",
+          icon: "fas fa-syringe", // FontAwesome icon for Root Canal Treatment (Syringe for medical procedures)
+          description: "Save your natural teeth with our expert root canal treatments, performed by experienced dentists to ensure minimal discomfort and maximum care.",
         },
         {
-          title: "Business Strategy",
-          icon: "fas fa-cogs", // FontAwesome icon for Business Strategy
-          description: "Optimize your business processes and improve efficiency with expert strategy guidance.",
-        },
+          title: "Durable Dental Implants",
+          icon: "fas fa-user-md", // FontAwesome icon for Dental Implants
+          description: "Restore your smile with top-quality dental implants that are long-lasting and look natural, offering both functionality and aesthetic appeal.",
+        }
       ],
     };
   },
