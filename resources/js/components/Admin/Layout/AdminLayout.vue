@@ -58,6 +58,32 @@
   </router-link>
 </li>
 
+<li>
+  <div @click="toggleCustomersDropdown" class="dropdown-header">
+    <i class="material-icons sidebar-icon">people</i>
+    Manage Patients
+    <i class="material-icons dropdown-arrow">{{ isCustomersDropdownOpen ? 'arrow_drop_up' : 'arrow_drop_down' }}</i>
+  </div>
+  <ul v-if="isCustomersDropdownOpen" class="dropdown-list">
+    <li>
+      <router-link 
+        to="/admin/patients" 
+        class="sidebar-link" 
+        :class="{ active: isActive('/admin/patients') }">
+        View Patients
+      </router-link>
+    </li>
+    <li>
+      <router-link 
+        to="/admin/patients/add" 
+        class="sidebar-link" 
+        :class="{ active: isActive('/admin/patients/add') }">
+        Add Patient
+      </router-link>
+    </li>
+  </ul>
+</li>
+
         <!-- Manage Reviews Section (Dropdown) -->
         <li>
           <div @click="toggleReviewsDropdown" class="dropdown-header">
@@ -85,15 +111,8 @@
 
 
 
-        <li>
-  <router-link 
-    to="/admin/customers" 
-    class="sidebar-link" 
-    :class="{ active: isActive('/admin/customers') }">
-    <i class="material-icons sidebar-icon">people</i>
-    Manage Students
-  </router-link>
-</li>
+
+
 
 <li>
   <router-link 
@@ -168,43 +187,40 @@
 <script>
 export default {
   name: 'AdminLayout',
-  data() {
-    return {
-      isServicesDropdownOpen: false,
-      isCustomizeDropdownOpen: false, 
-      isSettingsDropdownOpen: false,
-      isReviewsDropdownOpen: false, // For the reviews dropdown
-
-    };
+data() {
+  return {
+    isServicesDropdownOpen: false,
+    isCustomizeDropdownOpen: false, 
+    isSettingsDropdownOpen: false,
+    isReviewsDropdownOpen: false, // For the reviews dropdown
+    isCustomersDropdownOpen: false, // For the customers dropdown
+  };
+},
+methods: {
+  toggleServicesDropdown() {
+    this.isServicesDropdownOpen = !this.isServicesDropdownOpen;
   },
-  computed: {
-    websiteUrl() {
-      return window.location.origin;
-    }
+  toggleCustomizeDropdown() {
+    this.isCustomizeDropdownOpen = !this.isCustomizeDropdownOpen;
   },
-  methods: {
-
-       toggleServicesDropdown() {
-      this.isServicesDropdownOpen = !this.isServicesDropdownOpen;
-    },
-    toggleCustomizeDropdown() {
-      this.isCustomizeDropdownOpen = !this.isCustomizeDropdownOpen;
-    },
-    toggleSettingsDropdown() {
-      this.isSettingsDropdownOpen = !this.isSettingsDropdownOpen;
-    },
-
-        toggleReviewsDropdown() {
-      this.isReviewsDropdownOpen = !this.isReviewsDropdownOpen; // For toggling reviews dropdown
-    },
-    isActive(route) {
-      return this.$route.path === route;
-    },
-    logout() {
-      this.$store.dispatch('auth/logout');
-      this.$router.push('/login');
-    }
+  toggleSettingsDropdown() {
+    this.isSettingsDropdownOpen = !this.isSettingsDropdownOpen;
   },
+  toggleReviewsDropdown() {
+    this.isReviewsDropdownOpen = !this.isReviewsDropdownOpen; // For toggling reviews dropdown
+  },
+  toggleCustomersDropdown() {
+    this.isCustomersDropdownOpen = !this.isCustomersDropdownOpen; // For toggling customers dropdown
+  },
+  isActive(route) {
+    return this.$route.path === route;
+  },
+  logout() {
+    this.$store.dispatch('auth/logout');
+    this.$router.push('/login');
+  }
+},
+
   mounted() {
     this.$store.dispatch('auth/checkAuth');
   }

@@ -4,16 +4,16 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\PatientHistory;
-use App\Models\Patient;
+use App\Models\User;
 
 class PatientHistorySeeder extends Seeder
 {
     public function run()
     {
-        $patient = Patient::first(); // Assuming there is at least one patient
+        $user =User::first(); // Assuming there is at least one patient
 
         PatientHistory::create([
-            'patient_id' => $patient->id,
+            'user_id' => $user->id,
             'treatment_date' => '2025-03-05',
             'treatment_details' => 'Dental cleaning and checkup',
             'dentist_name' => 'Dr. Smith',

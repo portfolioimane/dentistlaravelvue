@@ -1,20 +1,17 @@
 <?php
-
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Patient;
+use App\Models\User;
 
 class PatientSeeder extends Seeder
 {
     public function run()
     {
-        Patient::create([
-            'first_name' => 'John',
-            'last_name' => 'Doe',
+        User::create([
+            'name' => 'John Doe', // Combine first and last name
             'email' => 'john.doe@example.com',
             'phone' => '1234567890',
-            'address' => '123 Main Street, Fez, Morocco',
             'date_of_birth' => '1985-10-10',
             'gender' => 'male',
             'emergency_contact' => 'Jane Doe - 0987654321',
@@ -22,6 +19,8 @@ class PatientSeeder extends Seeder
             'is_insured' => true,
             'insurance_provider' => 'XYZ Insurance',
             'insurance_id' => 'ABC123456',
+            'role' => 'customer', // Set role as customer by default
+            'password' => bcrypt('password123'), // Add a default password
         ]);
     }
 }

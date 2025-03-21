@@ -18,11 +18,24 @@ class User extends Authenticatable
         'role',
         'avatar',
         'phone',
+        'date_of_birth',
+        'gender',
+        'emergency_contact',
+        'medical_history',
+        'insurance_provider',
+        'insurance_id',
+        'is_insured',
     ];
 
-    // Define the relationship with the Enrollment model
-    public function enrollments()
+    // Define the relationship with the Booking model (for appointments)
+    public function bookings()
     {
-        return $this->hasMany(Enrollment::class);
+        return $this->hasMany(Booking::class);
     }
+
+     public function histories()
+    {
+        return $this->hasMany(PatientHistory::class);
+    }
+ 
 }

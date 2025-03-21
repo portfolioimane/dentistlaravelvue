@@ -35,6 +35,9 @@ import GeneralCustomize from '../components/Admin/Customize/GeneralCustomize.vue
 import HomePageHeader from '../components/Admin/Customize/HomePageHeader.vue';
 
 import Customers from '../components/Admin/Customers/Customers.vue';
+import AddCustomer from '../components/Admin/Customers/AddCustomer.vue';
+import EditCustomer from '../components/Admin/Customers/EditCustomer.vue';
+
 import ContactMessages from '../components/Admin/Customers/ContactMessages.vue';
 
 import Services from '../components/Admin/Services/Services.vue';
@@ -53,6 +56,11 @@ import MyBookings from '../components/Frontend/MyBookings.vue';
 
 import AddReview from '../components/Admin/Review/AddReview.vue';
 import ReviewList from '../components/Admin/Review/ReviewList.vue';
+
+import ManagePatientHistories from '../components/Admin/CustomersHistories/ManageHistories.vue';
+
+import AddPatientHistory from '../components/Admin/CustomersHistories/AddPatientHistory.vue';;
+import EditPatientHistory from '../components/Admin/CustomersHistories/EditPatientHistory.vue';;
 
 
 
@@ -193,17 +201,41 @@ const routes = [
         name: 'EditService',
         component: EditService,
       },
-             {
-        path: 'courses/:courseId/lessons/edit/:lessonId',
-        name: 'EditLesson',
-        component: EditLesson,
-      },
+     
      
                {
         name: 'Customers',
-        path: 'customers',
+        path: 'patients',
         component: Customers,
       },
+            {
+        name: 'AddCustomer',
+        path: 'patients/add',
+        component: AddCustomer,
+      },
+
+          {
+        path: 'patients/edit/:id',
+        name: 'EditCustomer',
+        component: EditCustomer,
+      },
+      {
+  
+  path: 'patients/:patientId/histories',    
+  name: 'ManageHistories',
+  component: ManagePatientHistories, 
+},
+{
+  path: '/patients/:patientId/add-history',
+  name: 'AddPatientHistory',
+  component:AddPatientHistory,
+},
+{
+      path: 'patients/:patientId/histories/edit/:historyId',
+        name: 'EditPatientHistory',
+        component: EditPatientHistory,
+      },
+
 
 {
   path: 'contact-messages',

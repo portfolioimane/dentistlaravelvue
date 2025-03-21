@@ -24,11 +24,18 @@ class UsersController extends Controller
     }
 
     // Fetch customers (only users with 'customer' role)
-    public function customers()
-    {
-        $customers = User::where('role', 'customer')->get(); // Get customers
-        return response()->json($customers);
-    }
+public function customers()
+{
+    // Get users (patients) who have bookings with status 'completed'
+    $customers = User::where('role', 'customer')
+                     ->whereHas('bookings', function ($query) {
+                         $query->where('status', 'completed'); // Assuming 'status' column exists in bookings table
+                     })
+                     ->get();
+
+    return response()->json($customers);
+}
+
 
     // Add a new user
     public function store(Request $request)

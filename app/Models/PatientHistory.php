@@ -10,7 +10,7 @@ class PatientHistory extends Model
     use HasFactory;
 
     protected $fillable = [
-        'patient_id',
+        'user_id',
         'treatment_date',
         'treatment_details',
         'dentist_name',

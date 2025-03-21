@@ -21,6 +21,13 @@ return new class extends Migration
         $table->rememberToken();
         $table->string('avatar')->nullable(); // Add nullable avatar field
         $table->string('phone')->nullable(); // Add nullable phone field
+            $table->date('date_of_birth')->nullable();
+            $table->enum('gender', ['male', 'female', 'other'])->nullable();
+            $table->string('emergency_contact')->nullable();
+            $table->text('medical_history')->nullable();
+            $table->boolean('is_insured')->default(false);
+            $table->string('insurance_provider')->nullable();
+            $table->string('insurance_id')->nullable();
         $table->timestamps();
     });
 }

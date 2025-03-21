@@ -10,11 +10,11 @@ class CreatePatientHistoriesTable extends Migration
     {
         Schema::create('patient_histories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('patient_id')->constrained('patients')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->date('treatment_date');
             $table->text('treatment_details');
             $table->string('dentist_name');
-            $table->enum('treatment_type', ['consultation', 'filling', 'cleaning', 'extraction', 'root_canal', 'implant', 'orthodontics', 'cosmetic', 'other']);
+            $table->enum('treatment_type');
             $table->decimal('treatment_cost', 8, 2);
             $table->decimal('amount_paid', 8, 2)->default(0.00);
             $table->decimal('remaining_balance', 8, 2)->default(0.00);

@@ -14,11 +14,11 @@
         </li>
         <li>
           <router-link 
-            to="/customerdashboard/myenrollments" 
+            to="/customerdashboard/mybookings" 
             class="sidebar-link" 
-            :class="{ active: isActive('/customerdashboard/myenrollments') }">
+            :class="{ active: isActive('/customerdashboard/mybookings') }">
             <i class="material-icons sidebar-icon">shopping_cart</i>
-            My Enrollments
+            My Bookings
           </router-link>
         </li>
    

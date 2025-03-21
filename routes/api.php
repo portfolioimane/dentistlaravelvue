@@ -15,6 +15,8 @@ use App\Http\Controllers\Api\Backend\PaymentSettingController as BackendPaymentS
 
 use App\Http\Controllers\Api\Backend\HomePageHeaderController as BackendHomePageHeaderController;
 
+use App\Http\Controllers\Api\Backend\PatientHistoriesController;
+
 
 use App\Http\Controllers\Api\Backend\UsersController;
 
@@ -23,6 +25,8 @@ use App\Http\Controllers\Api\Backend\GeneralCustomizeController;
 // routes/api.php
 
 use App\Http\Controllers\Api\Backend\BuisnessHoursController;
+
+use App\Http\Controllers\Api\Backend\CustomersController as BackendCustomersController;
 
 
 use App\Http\Controllers\Api\Backend\ContactController as BackendContactController;
@@ -125,6 +129,21 @@ Route::middleware('auth:sanctum')->group(function () {
 
 Route::prefix('admin')->middleware(['auth:sanctum', 'admin'])->group(function () {
 
+    Route::apiResource('patients', BackendCustomersController::class);
+
+      Route::get('/patients/{patientId}/histories', [PatientHistoriesController::class, 'index']);
+    
+    // Fetch a specific patient history by ID
+    Route::get('/patient-histories/{historyId}', [PatientHistoriesController::class, 'getHistory']);
+    
+    // Add a new history entry for a patient
+    Route::post('/patients/{patientId}/histories', [PatientHistoriesController::class, 'store']);
+    
+    // Update a patient history entry
+    Route::put('/patient-histories/{historyId}', [PatientHistoriesController::class, 'update']);
+    
+    // Delete a patient history entry
+    Route::delete('/patient-histories/{historyId}', [PatientHistoriesController::class, 'destroy']);
 
 Route::get('/buisnesshours', [BuisnessHoursController::class, 'getBuisnessHours']);
 Route::post('/buisnesshours', [BuisnessHoursController::class, 'updateBuisnessHours']);

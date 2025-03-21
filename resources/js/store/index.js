@@ -16,6 +16,8 @@ import reviews from './modules/review.js';
 import backendReview from './modules/backend/review.js';
 import buisnessHours from './modules/backend/buisnessHours.js';
 import services from './modules/services.js';
+import backendCustomers from './modules/backend/customers.js';
+import backendPatientHistories from './modules/backend/patienthistories.js';
 
 
 
@@ -38,7 +40,10 @@ const store = createStore({
     reviews,
     backendReview,
     buisnessHours,
+    backendCustomers,
+    backendPatientHistories,
   },
+
 });
 
 

@@ -35,7 +35,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="userDropdown">
             <li><router-link to="/customerdashboard/profile" class="dropdown-item">Profile</router-link></li>
-            <li><router-link to="/customerdashboard/myenrollments" class="dropdown-item">CustomerDashboard</router-link></li>
+            <li><router-link to="/customerdashboard/mybookings" class="dropdown-item">CustomerDashboard</router-link></li>
             <li><a @click="logout" class="dropdown-item">Logout</a></li>
           </ul>
         </li>
