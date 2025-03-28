@@ -12,7 +12,7 @@
         <h4 class="footer-heading">Quick Links</h4>
         <ul class="footer-links">
           <li><a href="/home" class="footer-link">Home</a></li>
-          <li><a href="/shop" class="footer-link">Shop</a></li>
+          <li><a href="/shop" class="footer-link">Services</a></li>
           <li><a href="/contact" class="footer-link">Contact</a></li>
         </ul>
       </div>

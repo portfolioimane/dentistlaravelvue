@@ -1,34 +1,17 @@
 <?php
-
-use App\Models\PaymentSetting;
-
-$paypalSettings = PaymentSetting::where('provider', 'paypal')->where('enabled', true)->first();
-
-if ($paypalSettings) {
-    $mode = $paypalSettings->mode; // 'sandbox' or 'live'
-    $clientId = $paypalSettings->public_key;
-    $clientSecret = $paypalSettings->secret_key;
-} else {
-    // Default fallback in case the PayPal settings are not found
-    $mode = 'sandbox';
-    $clientId = '';
-    $clientSecret = '';
-    $appId = 'APP-80W284485P519543T'; // Default sandbox app_id
-}
-
 return [
-    'mode' => $mode, // 'sandbox' or 'live'
+    'mode' => env('PAYPAL_MODE', 'sandbox'), // This can still be used if you have a fallback in .env, but it's optional.
     'sandbox' => [
-        'client_id'     => $clientId,
-        'client_secret' => $clientSecret,
+        'client_id'     => env('PAYPAL_CLIENT_ID', ''),  // Empty or from database
+        'client_secret' => env('PAYPAL_CLIENT_SECRET', ''), // Empty or from database
     ],
     'live' => [
-        'client_id'     => $clientId,
-        'client_secret' => $clientSecret,
+        'client_id'     => env('PAYPAL_CLIENT_ID', ''),  // Empty or from database
+        'client_secret' => env('PAYPAL_CLIENT_SECRET', ''), // Empty or from database
     ],
     'payment_action' => 'Sale', // Default payment action
     'currency'       => 'USD', // Default currency
-    'notify_url'     => '', // You can add a default or leave it empty
+    'notify_url'     => '', // Default or custom notify URL
     'locale'         => 'en_US', // Default locale
     'validate_ssl'   => true, // Default SSL validation
 ];

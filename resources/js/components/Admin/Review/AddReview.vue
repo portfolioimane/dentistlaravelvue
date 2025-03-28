@@ -90,13 +90,13 @@ export default {
       return this.$store.getters['backendServices/allServices'];
     },
     customers() {
-      return this.$store.getters['backendUsers/allCustomers'];
+      return this.$store.getters['backendCustomers/allCustomers'];
     },
   },
   methods: {
     ...mapActions('backendReview', ['createReview']),
     ...mapActions('backendServices', ['fetchServices']),
-    ...mapActions('backendUsers', ['fetchCustomers']),
+    ...mapActions('backendCustomers', ['fetchCustomers']),
     async submitReview() {
       try {
         await this.createReview(this.reviewData);

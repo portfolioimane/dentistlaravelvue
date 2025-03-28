@@ -13,8 +13,8 @@
         <p>{{ totalBookings }}</p>
       </div>
       <div class="stat-card">
-        <h3>Total Students</h3>
-        <p>{{ totalStudents }}</p>
+        <h3>Total Patients</h3>
+        <p>{{ totalPatients }}</p>
       </div>
     </div>
 
@@ -24,7 +24,7 @@
       <table>
         <thead>
           <tr>
-            <th>Student Name</th>
+            <th>Patient Name</th>
             <th>Date</th>
             <th>Total Amount</th>
             <th>Service</th>
@@ -35,7 +35,7 @@
             <td>{{ booking.name }}</td>
             <td>{{ formatDate(booking.created_at) }}</td>
             <td>{{ booking.total }} MAD</td>
-            <td>{{ booking.service.title }}</td>
+            <td>{{ booking.service.name }}</td>
           </tr>
         </tbody>
       </table>
@@ -52,7 +52,7 @@ export default {
     ...mapGetters({
       services: "backendServices/allServices", // Changed from backendCourses to backendServices
       bookings: "backendBookings/bookings",
-      customers: "backendUsers/allCustomers",
+      customers: "backendCustomers/allCustomers",
     }),
 
     servicesCount() {
@@ -63,7 +63,7 @@ export default {
       return this.bookings.length;
     },
 
-    totalStudents() {
+    totalPatients() {
       return this.customers.length;
     },
 
@@ -78,7 +78,7 @@ export default {
       try {
         await this.$store.dispatch("backendServices/fetchServices"); // Fetch services instead of courses
         await this.$store.dispatch("backendBookings/fetchBookings");
-        await this.$store.dispatch("backendUsers/fetchCustomers");
+        await this.$store.dispatch("backendCustomers/fetchCustomers");
       } catch (error) {
         console.error("Error fetching dashboard data:", error);
       }

@@ -29,6 +29,10 @@ import BuisnessHours from '../components/Admin/BuisnessHours/BuisnessHours.vue';
 
 import PaymentSetting from '../components/Admin/Settings/PaymentSetting.vue';
 
+import EmailSetting from '../components/Admin/Settings/EmailSetting.vue';
+import SmsSetting from '../components/Admin/Settings/SmsSetting.vue';
+
+
 import GeneralCustomize from '../components/Admin/Customize/GeneralCustomize.vue';
 
 
@@ -247,6 +251,16 @@ const routes = [
         name: 'PaymentSetting',
         path: 'paymentsetting',
         component: PaymentSetting,
+      },
+        {
+        name: 'EmailSetting',
+        path: 'emailsetting',
+        component: EmailSetting,
+      },
+          {
+        name: 'SmsSetting',
+        path: 'smssetting',
+        component: SmsSetting,
       },
               {
         name: 'GeneralCustomize',

@@ -149,22 +149,41 @@
         </li>
 
         <!-- Manage Settings Section -->
-        <li>
-          <div @click="toggleSettingsDropdown" class="dropdown-header">
-            <i class="material-icons sidebar-icon">settings</i>
-            Manage Settings
-            <i class="material-icons dropdown-arrow">{{ isSettingsDropdownOpen ? 'arrow_drop_up' : 'arrow_drop_down' }}</i>
-          </div>
-          <ul v-if="isSettingsDropdownOpen" class="dropdown-list">
-  
-            <li>
-              <router-link 
-                to="/admin/paymentsetting" 
-                class="sidebar-link" 
-                :class="{ active: isActive('/admin/paymentsetting') }">Payments</router-link>
-            </li>
-          </ul>
-        </li>
+<li>
+  <div @click="toggleSettingsDropdown" class="dropdown-header">
+    <i class="material-icons sidebar-icon">settings</i>
+    Manage Settings
+    <i class="material-icons dropdown-arrow">{{ isSettingsDropdownOpen ? 'arrow_drop_up' : 'arrow_drop_down' }}</i>
+  </div>
+  <ul v-if="isSettingsDropdownOpen" class="dropdown-list">
+    
+    <!-- Payment Settings Link -->
+    <li>
+      <router-link 
+        to="/admin/paymentsetting" 
+        class="sidebar-link" 
+        :class="{ active: isActive('/admin/paymentsetting') }">Payments</router-link>
+    </li>
+    
+    <!-- Email Settings Link -->
+    <li>
+      <router-link 
+        to="/admin/emailsetting" 
+        class="sidebar-link" 
+        :class="{ active: isActive('/admin/emailsetting') }">Email Settings</router-link>
+    </li>
+
+    <!-- SMS Settings Link -->
+    <li>
+      <router-link 
+        to="/admin/smssetting" 
+        class="sidebar-link" 
+        :class="{ active: isActive('/admin/smssetting') }">SMS Settings</router-link>
+    </li>
+
+  </ul>
+</li>
+
       </ul>
     </aside>
 

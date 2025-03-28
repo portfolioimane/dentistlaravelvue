@@ -16,7 +16,7 @@ class BookingReminder extends Mailable
     public function build()
     {
         return $this->subject('Booking Reminder')
-                    ->view('emails.booking-reminder')
+                    ->view('emails.booking_reminder')
                     ->with([
                         'booking' => $this->booking,
                     ]);

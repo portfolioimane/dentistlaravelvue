@@ -1,9 +1,9 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Booking extends Model
 {
@@ -24,15 +24,31 @@ class Booking extends Model
         'paid_amount',
     ];
 
-    public function service()
+    // Format the date without the time part (if needed)
+    public function formattedDate()
     {
-        return $this->belongsTo(Service::class); // Defines a many-to-one relationship
+        return Carbon::parse($this->date)->format('Y-m-d');
     }
 
-      public function user()
+    // Format the start time
+    public function formattedStartTime()
+    {
+        return Carbon::parse($this->start_time)->format('H:i');
+    }
+
+    // Format the end time
+    public function formattedEndTime()
+    {
+        return Carbon::parse($this->end_time)->format('H:i');
+    }
+
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
+    }
+
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
-
-  
 }

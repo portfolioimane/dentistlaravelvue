@@ -29643,7 +29643,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
     services: "backendServices/allServices",
     // Changed from backendCourses to backendServices
     bookings: "backendBookings/bookings",
-    customers: "backendUsers/allCustomers"
+    customers: "backendCustomers/allCustomers"
   })), {}, {
     servicesCount: function servicesCount() {
       return this.services.length; // Updated to reflect services count
@@ -29651,7 +29651,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
     totalBookings: function totalBookings() {
       return this.bookings.length;
     },
-    totalStudents: function totalStudents() {
+    totalPatients: function totalPatients() {
       return this.customers.length;
     },
     recentBookings: function recentBookings() {
@@ -29675,7 +29675,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
               return _this.$store.dispatch("backendBookings/fetchBookings");
             case 5:
               _context.next = 7;
-              return _this.$store.dispatch("backendUsers/fetchCustomers");
+              return _this.$store.dispatch("backendCustomers/fetchCustomers");
             case 7:
               _context.next = 12;
               break;
@@ -30099,10 +30099,10 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       return this.$store.getters['backendServices/allServices'];
     },
     customers: function customers() {
-      return this.$store.getters['backendUsers/allCustomers'];
+      return this.$store.getters['backendCustomers/allCustomers'];
     }
   },
-  methods: _objectSpread(_objectSpread(_objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapActions)('backendReview', ['createReview'])), (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapActions)('backendServices', ['fetchServices'])), (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapActions)('backendUsers', ['fetchCustomers'])), {}, {
+  methods: _objectSpread(_objectSpread(_objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapActions)('backendReview', ['createReview'])), (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapActions)('backendServices', ['fetchServices'])), (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapActions)('backendCustomers', ['fetchCustomers'])), {}, {
     submitReview: function submitReview() {
       var _this = this;
       return _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
@@ -30659,6 +30659,140 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/EmailSetting.vue?vue&type=script&lang=js":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/EmailSetting.vue?vue&type=script&lang=js ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      message: null,
+      localEmailEnabled: false,
+      localMailProvider: '',
+      localMailHost: '',
+      localMailPort: '',
+      localMailUsername: '',
+      localMailPassword: '',
+      localMailEncryption: '',
+      localMailFromAddress: '',
+      localMailFromName: ''
+    };
+  },
+  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)('emailSetting', ['isEmailEnabled', 'mailProvider', 'mailHost', 'mailPort', 'mailUsername', 'mailPassword', 'mailEncryption', 'mailFromAddress', 'mailFromName'])),
+  methods: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapActions)('emailSetting', ['updateEmailSettings', 'fetchEmailSettings'])), {}, {
+    updateEmail: function updateEmail() {
+      var _this = this;
+      return _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              _context.prev = 0;
+              _context.next = 3;
+              return _this.updateEmailSettings({
+                enabled: _this.localEmailEnabled,
+                provider: _this.localMailProvider,
+                host: _this.localMailHost,
+                port: _this.localMailPort,
+                username: _this.localMailUsername,
+                password: _this.localMailPassword,
+                encryption: _this.localMailEncryption,
+                from_address: _this.localMailFromAddress,
+                from_name: _this.localMailFromName
+              });
+            case 3:
+              _this.showMessage('Email settings updated successfully!', 'success');
+              _context.next = 9;
+              break;
+            case 6:
+              _context.prev = 6;
+              _context.t0 = _context["catch"](0);
+              _this.showMessage('Error updating email settings.', 'error');
+            case 9:
+            case "end":
+              return _context.stop();
+          }
+        }, _callee, null, [[0, 6]]);
+      }))();
+    },
+    showMessage: function showMessage(text, type) {
+      var _this2 = this;
+      this.message = {
+        text: text,
+        type: type
+      };
+      setTimeout(function () {
+        _this2.message = null;
+      }, 5000);
+    },
+    closeModal: function closeModal() {
+      this.message = null;
+    }
+  }),
+  mounted: function mounted() {
+    var _this3 = this;
+    // Fetch email settings when the component is mounted
+    this.fetchEmailSettings().then(function () {
+      console.log('Computed Email Settings:', {
+        isEmailEnabled: _this3.isEmailEnabled,
+        mailProvider: _this3.mailProvider,
+        mailHost: _this3.mailHost,
+        mailPort: _this3.mailPort,
+        mailUsername: _this3.mailUsername,
+        mailPassword: _this3.mailPassword,
+        mailEncryption: _this3.mailEncryption,
+        mailFromAddress: _this3.mailFromAddress,
+        mailFromName: _this3.mailFromName
+      });
+
+      // Initialize the form fields with the fetched values
+      _this3.localEmailEnabled = _this3.isEmailEnabled;
+      _this3.localMailProvider = _this3.mailProvider || '';
+      _this3.localMailHost = _this3.mailHost || '';
+      _this3.localMailPort = _this3.mailPort || '';
+      _this3.localMailUsername = _this3.mailUsername || '';
+      _this3.localMailPassword = _this3.mailPassword || '';
+      _this3.localMailEncryption = _this3.mailEncryption || '';
+      _this3.localMailFromAddress = _this3.mailFromAddress || '';
+      _this3.localMailFromName = _this3.mailFromName || '';
+
+      // Log the email settings
+      console.log('Email Settings:', {
+        localEmailEnabled: _this3.localEmailEnabled,
+        localMailProvider: _this3.localMailProvider,
+        localMailHost: _this3.localMailHost,
+        localMailPort: _this3.localMailPort,
+        localMailUsername: _this3.localMailUsername,
+        localMailPassword: _this3.localMailPassword,
+        localMailEncryption: _this3.localMailEncryption,
+        localMailFromAddress: _this3.localMailFromAddress,
+        localMailFromName: _this3.localMailFromName
+      });
+    })["catch"](function (error) {
+      console.error('Error fetching email settings:', error);
+    });
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/PaymentSetting.vue?vue&type=script&lang=js":
 /*!***********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/PaymentSetting.vue?vue&type=script&lang=js ***!
@@ -30787,6 +30921,101 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       _this4.localPaypalMode = _this4.paypalMode || 'sandbox'; // Set the fetched mode
     })["catch"](function (error) {
       console.error('Error fetching payment settings:', error);
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/SmsSetting.vue?vue&type=script&lang=js":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/SmsSetting.vue?vue&type=script&lang=js ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      message: null,
+      localSmsEnabled: false,
+      localSmsProvider: 'twilio',
+      localSmsSid: '',
+      localSmsAuthToken: '',
+      localSmsPhoneNumber: ''
+    };
+  },
+  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)('smsSetting', ['isSmsEnabled', 'smsProvider', 'smsSid', 'smsAuthToken', 'smsPhoneNumber'])),
+  methods: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapActions)('smsSetting', ['updateSmsSettings', 'fetchSmsSettings'])), {}, {
+    updateSms: function updateSms() {
+      var _this = this;
+      return _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              _context.prev = 0;
+              _context.next = 3;
+              return _this.updateSmsSettings({
+                enabled: _this.localSmsEnabled,
+                provider: _this.localSmsProvider,
+                sid: _this.localSmsSid,
+                auth_token: _this.localSmsAuthToken,
+                phone_number: _this.localSmsPhoneNumber
+              });
+            case 3:
+              _this.showMessage('SMS settings updated successfully!', 'success');
+              _context.next = 9;
+              break;
+            case 6:
+              _context.prev = 6;
+              _context.t0 = _context["catch"](0);
+              _this.showMessage('Error updating SMS settings.', 'error');
+            case 9:
+            case "end":
+              return _context.stop();
+          }
+        }, _callee, null, [[0, 6]]);
+      }))();
+    },
+    showMessage: function showMessage(text, type) {
+      var _this2 = this;
+      this.message = {
+        text: text,
+        type: type
+      };
+      setTimeout(function () {
+        _this2.message = null;
+      }, 5000);
+    },
+    closeModal: function closeModal() {
+      this.message = null;
+    }
+  }),
+  mounted: function mounted() {
+    var _this3 = this;
+    this.fetchSmsSettings().then(function () {
+      _this3.localSmsEnabled = _this3.isSmsEnabled;
+      _this3.localSmsProvider = _this3.smsProvider || 'twilio';
+      _this3.localSmsSid = _this3.smsSid || '';
+      _this3.localSmsAuthToken = _this3.smsAuthToken || '';
+      _this3.localSmsPhoneNumber = _this3.smsPhoneNumber || '';
+    })["catch"](function (error) {
+      console.error('Error fetching SMS settings:', error);
     });
   }
 });
@@ -33856,10 +34085,10 @@ var _hoisted_6 = {
   "class": "recent-orders"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_cache[5] || (_cache[5] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Admin Dashboard", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Dashboard Stats Section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Total Services", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.servicesCount), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Total Bookings", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.totalBookings), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Total Students", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.totalStudents), 1 /* TEXT */)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Recent Orders Section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Recent Bookings", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", null, [_cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Student Name"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Date"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Total Amount"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Service")])], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($options.recentBookings, function (booking) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_cache[5] || (_cache[5] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Admin Dashboard", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Dashboard Stats Section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Total Services", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.servicesCount), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Total Bookings", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.totalBookings), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Total Patients", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.totalPatients), 1 /* TEXT */)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Recent Orders Section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Recent Bookings", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", null, [_cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Patient Name"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Date"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Total Amount"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Service")])], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($options.recentBookings, function (booking) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
       key: booking.id
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(booking.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.formatDate(booking.created_at)), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(booking.total) + " MAD", 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(booking.service.title), 1 /* TEXT */)]);
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(booking.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.formatDate(booking.created_at)), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(booking.total) + " MAD", 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(booking.service.name), 1 /* TEXT */)]);
   }), 128 /* KEYED_FRAGMENT */))])])])]);
 }
 
@@ -33929,7 +34158,7 @@ var _hoisted_15 = ["href"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
   var _component_router_view = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-view");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("aside", _hoisted_2, [_cache[29] || (_cache[29] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Admin Dashboard", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("aside", _hoisted_2, [_cache[31] || (_cache[31] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Admin Dashboard", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "/admin/dashboard",
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["sidebar-link", {
       active: $options.isActive('/admin/dashboard')
@@ -34092,7 +34321,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "dropdown-header"
   }, [_cache[26] || (_cache[26] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
     "class": "material-icons sidebar-icon"
-  }, "settings", -1 /* HOISTED */)), _cache[27] || (_cache[27] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Manage Settings ")), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.isSettingsDropdownOpen ? 'arrow_drop_up' : 'arrow_drop_down'), 1 /* TEXT */)]), $data.isSettingsDropdownOpen ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  }, "settings", -1 /* HOISTED */)), _cache[27] || (_cache[27] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Manage Settings ")), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.isSettingsDropdownOpen ? 'arrow_drop_up' : 'arrow_drop_down'), 1 /* TEXT */)]), $data.isSettingsDropdownOpen ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Payment Settings Link "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "/admin/paymentsetting",
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["sidebar-link", {
       active: $options.isActive('/admin/paymentsetting')
@@ -34102,18 +34331,38 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return _cache[28] || (_cache[28] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Payments")]);
     }),
     _: 1 /* STABLE */
+  }, 8 /* PROPS */, ["class"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Email Settings Link "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/admin/emailsetting",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["sidebar-link", {
+      active: $options.isActive('/admin/emailsetting')
+    }])
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return _cache[29] || (_cache[29] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Email Settings")]);
+    }),
+    _: 1 /* STABLE */
+  }, 8 /* PROPS */, ["class"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" SMS Settings Link "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/admin/smssetting",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["sidebar-link", {
+      active: $options.isActive('/admin/smssetting')
+    }])
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return _cache[30] || (_cache[30] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("SMS Settings")]);
+    }),
+    _: 1 /* STABLE */
   }, 8 /* PROPS */, ["class"])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     href: _ctx.websiteUrl,
     "class": "navbar-link view-website",
     target: "_blank"
-  }, _cache[30] || (_cache[30] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  }, _cache[32] || (_cache[32] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
     "class": "material-icons navbar-icon"
   }, "public", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" View Website ")]), 8 /* PROPS */, _hoisted_15), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[5] || (_cache[5] = function () {
       return $options.logout && $options.logout.apply($options, arguments);
     }),
     "class": "navbar-btn logout-btn"
-  }, _cache[31] || (_cache[31] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  }, _cache[33] || (_cache[33] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
     "class": "material-icons"
   }, "exit_to_app", -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Logout ")]))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_view)])]);
 }
@@ -34856,6 +35105,198 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/EmailSetting.vue?vue&type=template&id=1cc12fa5&scoped=true":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/EmailSetting.vue?vue&type=template&id=1cc12fa5&scoped=true ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "email-settings-container"
+};
+var _hoisted_2 = {
+  "class": "settings-section"
+};
+var _hoisted_3 = {
+  "class": "form-group"
+};
+var _hoisted_4 = ["checked"];
+var _hoisted_5 = {
+  key: 0
+};
+var _hoisted_6 = {
+  "class": "form-group"
+};
+var _hoisted_7 = {
+  "class": "form-group"
+};
+var _hoisted_8 = {
+  "class": "form-group"
+};
+var _hoisted_9 = {
+  "class": "form-group"
+};
+var _hoisted_10 = {
+  "class": "form-group"
+};
+var _hoisted_11 = {
+  "class": "form-group"
+};
+var _hoisted_12 = {
+  "class": "form-group"
+};
+var _hoisted_13 = {
+  "class": "form-group"
+};
+var _hoisted_14 = {
+  "class": "modal-body"
+};
+var _hoisted_15 = {
+  "class": "modal-footer"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_cache[24] || (_cache[24] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+    "class": "settings-title"
+  }, "Email Settings", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Reminder Note "), _cache[25] || (_cache[25] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "reminder-note"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Note:"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Don't forget to save your changes by clicking the \"Save\" button after making updates!")])], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Email Notification Settings Section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_cache[23] || (_cache[23] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
+    "class": "section-title"
+  }, "Email Settings", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+    onSubmit: _cache[9] || (_cache[9] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return $options.updateEmail && $options.updateEmail.apply($options, arguments);
+    }, ["prevent"]))
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_cache[13] || (_cache[13] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "emailEnabled",
+    "class": "form-label"
+  }, "Enable Email", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return $data.localEmailEnabled = $event;
+    }),
+    type: "checkbox",
+    id: "emailEnabled",
+    "class": "checkbox-input",
+    checked: $data.localEmailEnabled
+  }, null, 8 /* PROPS */, _hoisted_4), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.localEmailEnabled]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Show Mail Fields only if Email Notifications are enabled "), $data.localEmailEnabled ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_cache[14] || (_cache[14] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "mailProvider",
+    "class": "form-label"
+  }, "Mail Provider", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+      return $data.localMailProvider = $event;
+    }),
+    type: "text",
+    id: "mailProvider",
+    "class": "form-control",
+    placeholder: "Enter Mail Provider (e.g., Mailgun, SendGrid)"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.localMailProvider]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_cache[15] || (_cache[15] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "mailHost",
+    "class": "form-label"
+  }, "Mail Host", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+      return $data.localMailHost = $event;
+    }),
+    type: "text",
+    id: "mailHost",
+    "class": "form-control",
+    placeholder: "Enter Mail Host"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.localMailHost]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_cache[16] || (_cache[16] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "mailPort",
+    "class": "form-label"
+  }, "Mail Port", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+      return $data.localMailPort = $event;
+    }),
+    type: "number",
+    id: "mailPort",
+    "class": "form-control",
+    placeholder: "Enter Mail Port"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.localMailPort]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_cache[17] || (_cache[17] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "mailUsername",
+    "class": "form-label"
+  }, "Mail Username", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
+      return $data.localMailUsername = $event;
+    }),
+    type: "text",
+    id: "mailUsername",
+    "class": "form-control",
+    placeholder: "Enter Mail Username"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.localMailUsername]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [_cache[18] || (_cache[18] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "mailPassword",
+    "class": "form-label"
+  }, "Mail Password", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
+      return $data.localMailPassword = $event;
+    }),
+    type: "text",
+    id: "mailPassword",
+    "class": "form-control",
+    placeholder: "Enter Mail Password"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.localMailPassword]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_cache[19] || (_cache[19] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "mailEncryption",
+    "class": "form-label"
+  }, "Mail Encryption", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[6] || (_cache[6] = function ($event) {
+      return $data.localMailEncryption = $event;
+    }),
+    type: "text",
+    id: "mailEncryption",
+    "class": "form-control",
+    placeholder: "Enter Mail Encryption (e.g., TLS)"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.localMailEncryption]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [_cache[20] || (_cache[20] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "mailFromAddress",
+    "class": "form-label"
+  }, "From Address", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
+      return $data.localMailFromAddress = $event;
+    }),
+    type: "email",
+    id: "mailFromAddress",
+    "class": "form-control",
+    placeholder: "Enter From Address"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.localMailFromAddress]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [_cache[21] || (_cache[21] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "mailFromName",
+    "class": "form-label"
+  }, "From Name", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[8] || (_cache[8] = function ($event) {
+      return $data.localMailFromName = $event;
+    }),
+    type: "text",
+    id: "mailFromName",
+    "class": "form-control",
+    placeholder: "Enter From Name"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.localMailFromName]])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _cache[22] || (_cache[22] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "form-action"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    type: "submit",
+    "class": "btn btn-update"
+  }, "Save Email Settings")], -1 /* HOISTED */))], 32 /* NEED_HYDRATION */)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Success/Error Modal "), $data.message ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+    key: 0,
+    "class": "modal-overlay",
+    onClick: _cache[12] || (_cache[12] = function () {
+      return $options.closeModal && $options.closeModal.apply($options, arguments);
+    })
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "modal-content",
+    onClick: _cache[11] || (_cache[11] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {}, ["stop"]))
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(['modal-header', $data.message.type])
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.message.type === 'success' ? 'Success' : 'Error'), 1 /* TEXT */)], 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.message.text), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onClick: _cache[10] || (_cache[10] = function () {
+      return $options.closeModal && $options.closeModal.apply($options, arguments);
+    }),
+    "class": "btn btn-closing"
+  }, "Close")])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64 /* STABLE_FRAGMENT */);
+}
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/PaymentSetting.vue?vue&type=template&id=8d762e8a&scoped=true":
 /*!***************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/PaymentSetting.vue?vue&type=template&id=8d762e8a&scoped=true ***!
@@ -35052,6 +35493,142 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(['modal-header', $data.message.type])
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.message.type === 'success' ? 'Success' : 'Error'), 1 /* TEXT */)], 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.message.text), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[10] || (_cache[10] = function () {
+      return $options.closeModal && $options.closeModal.apply($options, arguments);
+    }),
+    "class": "btn btn-closing"
+  }, "Close")])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64 /* STABLE_FRAGMENT */);
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/SmsSetting.vue?vue&type=template&id=06223ff0&scoped=true":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/SmsSetting.vue?vue&type=template&id=06223ff0&scoped=true ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "sms-settings-container"
+};
+var _hoisted_2 = {
+  "class": "settings-section"
+};
+var _hoisted_3 = {
+  "class": "form-group"
+};
+var _hoisted_4 = ["checked"];
+var _hoisted_5 = {
+  key: 0
+};
+var _hoisted_6 = {
+  "class": "form-group"
+};
+var _hoisted_7 = {
+  "class": "form-group"
+};
+var _hoisted_8 = {
+  "class": "form-group"
+};
+var _hoisted_9 = {
+  "class": "form-group"
+};
+var _hoisted_10 = {
+  "class": "modal-body"
+};
+var _hoisted_11 = {
+  "class": "modal-footer"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_cache[16] || (_cache[16] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+    "class": "settings-title"
+  }, "SMS Settings", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Reminder Note "), _cache[17] || (_cache[17] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "reminder-note"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Note:"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Don't forget to save your changes by clicking the \"Save\" button after making updates!")])], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" SMS Notification Settings Section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_cache[15] || (_cache[15] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
+    "class": "section-title"
+  }, "SMS Settings", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+    onSubmit: _cache[5] || (_cache[5] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return $options.updateSms && $options.updateSms.apply($options, arguments);
+    }, ["prevent"]))
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_cache[9] || (_cache[9] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "smsEnabled",
+    "class": "form-label"
+  }, "Enable SMS", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return $data.localSmsEnabled = $event;
+    }),
+    type: "checkbox",
+    id: "smsEnabled",
+    "class": "checkbox-input",
+    checked: $data.localSmsEnabled
+  }, null, 8 /* PROPS */, _hoisted_4), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.localSmsEnabled]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Show SMS Fields only if SMS Notifications are enabled "), $data.localSmsEnabled ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_cache[10] || (_cache[10] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "smsProvider",
+    "class": "form-label"
+  }, "SMS Provider", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+      return $data.localSmsProvider = $event;
+    }),
+    type: "text",
+    id: "smsProvider",
+    "class": "form-control",
+    placeholder: "Enter SMS Provider (e.g., Twilio)"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.localSmsProvider]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_cache[11] || (_cache[11] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "smsSid",
+    "class": "form-label"
+  }, "Twilio SID", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+      return $data.localSmsSid = $event;
+    }),
+    type: "text",
+    id: "smsSid",
+    "class": "form-control",
+    placeholder: "Enter Twilio SID"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.localSmsSid]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_cache[12] || (_cache[12] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "smsAuthToken",
+    "class": "form-label"
+  }, "Twilio Auth Token", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+      return $data.localSmsAuthToken = $event;
+    }),
+    type: "text",
+    id: "smsAuthToken",
+    "class": "form-control",
+    placeholder: "Enter Twilio Auth Token"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.localSmsAuthToken]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_cache[13] || (_cache[13] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "for": "smsPhoneNumber",
+    "class": "form-label"
+  }, "Twilio Phone Number", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
+      return $data.localSmsPhoneNumber = $event;
+    }),
+    type: "text",
+    id: "smsPhoneNumber",
+    "class": "form-control",
+    placeholder: "Enter Twilio Phone Number"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.localSmsPhoneNumber]])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _cache[14] || (_cache[14] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "form-action"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    type: "submit",
+    "class": "btn btn-update"
+  }, "Save SMS Settings")], -1 /* HOISTED */))], 32 /* NEED_HYDRATION */)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Success/Error Modal "), $data.message ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+    key: 0,
+    "class": "modal-overlay",
+    onClick: _cache[8] || (_cache[8] = function () {
+      return $options.closeModal && $options.closeModal.apply($options, arguments);
+    })
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "modal-content",
+    onClick: _cache[7] || (_cache[7] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {}, ["stop"]))
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(['modal-header', $data.message.type])
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.message.type === 'success' ? 'Success' : 'Error'), 1 /* TEXT */)], 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.message.text), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onClick: _cache[6] || (_cache[6] = function () {
       return $options.closeModal && $options.closeModal.apply($options, arguments);
     }),
     "class": "btn btn-closing"
@@ -36042,7 +36619,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     src: $options.logo,
     alt: "Company Logo",
     "class": "footer-logo"
-  }, null, 8 /* PROPS */, _hoisted_4), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.footerDescription), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Column 2: Navigation Links "), _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"footer-column\" data-v-4d0b3d8e><h4 class=\"footer-heading\" data-v-4d0b3d8e>Quick Links</h4><ul class=\"footer-links\" data-v-4d0b3d8e><li data-v-4d0b3d8e><a href=\"/home\" class=\"footer-link\" data-v-4d0b3d8e>Home</a></li><li data-v-4d0b3d8e><a href=\"/shop\" class=\"footer-link\" data-v-4d0b3d8e>Shop</a></li><li data-v-4d0b3d8e><a href=\"/contact\" class=\"footer-link\" data-v-4d0b3d8e>Contact</a></li></ul></div>", 1)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Column 3: Social Media Links "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
+  }, null, 8 /* PROPS */, _hoisted_4), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.footerDescription), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Column 2: Navigation Links "), _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"footer-column\" data-v-4d0b3d8e><h4 class=\"footer-heading\" data-v-4d0b3d8e>Quick Links</h4><ul class=\"footer-links\" data-v-4d0b3d8e><li data-v-4d0b3d8e><a href=\"/home\" class=\"footer-link\" data-v-4d0b3d8e>Home</a></li><li data-v-4d0b3d8e><a href=\"/shop\" class=\"footer-link\" data-v-4d0b3d8e>Services</a></li><li data-v-4d0b3d8e><a href=\"/contact\" class=\"footer-link\" data-v-4d0b3d8e>Contact</a></li></ul></div>", 1)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Column 3: Social Media Links "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
     "class": "footer-heading"
   }, "Follow Us", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     href: $options.socialLinks.facebook,
@@ -43802,6 +44379,30 @@ ___CSS_LOADER_EXPORT___.push([module.id, "\n.services[data-v-58b6c014] {\n  padd
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/EmailSetting.vue?vue&type=style&index=0&id=1cc12fa5&scoped=true&lang=css":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/EmailSetting.vue?vue&type=style&index=0&id=1cc12fa5&scoped=true&lang=css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n/* Styling for the email settings container */\n.email-settings-container[data-v-1cc12fa5] {\n  padding: 20px;\n  background-color: #f9f9f9;\n  border-radius: 8px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n  max-width: 800px;\n  margin: 0 auto;\n}\n.settings-title[data-v-1cc12fa5] {\n  text-align: center;\n  color: #333;\n  font-size: 24px;\n  margin-bottom: 20px;\n}\n.settings-section[data-v-1cc12fa5] {\n  margin-bottom: 30px;\n}\n.section-title[data-v-1cc12fa5] {\n  font-size: 20px;\n  color: #333;\n  border-bottom: 2px solid #ddd;\n  padding-bottom: 8px;\n  margin-bottom: 15px;\n}\n.form-group[data-v-1cc12fa5] {\n  margin-bottom: 1.5rem;\n}\n.form-label[data-v-1cc12fa5] {\n  font-size: 16px;\n  color: #333;\n}\n.form-control[data-v-1cc12fa5] {\n  width: 100%;\n  padding: 12px;\n  border-radius: 5px;\n  border: 1px solid #ccc;\n  font-size: 14px;\n  transition: border-color 0.3s ease;\n}\n.form-control[data-v-1cc12fa5]:focus {\n  border-color: #1E90FF;\n}\n.checkbox-input[data-v-1cc12fa5] {\n  width: auto;\n  height: 20px;\n  margin-right: 10px;\n}\n.btn-update[data-v-1cc12fa5] {\n  background-color: #1E90FF;\n  color: white;\n  border: none;\n  padding: 12px 20px;\n  border-radius: 5px;\n  cursor: pointer;\n  font-size: 16px;\n}\n.btn-update[data-v-1cc12fa5]:hover {\n  background-color: #187bcd;\n}\n.reminder-note[data-v-1cc12fa5] {\n  margin-top: 20px;\n  border-radius: 5px;\n  text-align: center;\n  font-size: 14px;\n  color: #333;\n  background-color: orange;\n}\n\n/* Modal Styling */\n.modal-overlay[data-v-1cc12fa5] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: rgba(0, 0, 0, 0.5);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.modal-content[data-v-1cc12fa5] {\n  background-color: #fff;\n  padding: 20px;\n  border-radius: 8px;\n  max-width: 400px;\n  width: 100%;\n}\n.modal-header[data-v-1cc12fa5] {\n  font-size: 18px;\n  font-weight: bold;\n}\n.modal-header.success[data-v-1cc12fa5] {\n  color: #28a745;\n}\n.modal-header.error[data-v-1cc12fa5] {\n  color: #dc3545;\n}\n.modal-footer[data-v-1cc12fa5] {\n  display: flex;\n  justify-content: flex-end;\n}\n.btn-closing[data-v-1cc12fa5] {\n  padding: 10px 20px;\n  font-size: 16px;\n  text-align: center;\n  background: none;\n  border: none;\n  width: auto;\n  background-color: #1F2A44 !important;\n  color: #fff;\n}\n.btn-closing[data-v-1cc12fa5]:hover {\n  background-color: #0056b3;\n}\n\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/PaymentSetting.vue?vue&type=style&index=0&id=8d762e8a&scoped=true&lang=css":
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/PaymentSetting.vue?vue&type=style&index=0&id=8d762e8a&scoped=true&lang=css ***!
@@ -43820,6 +44421,30 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "\n/* Styling for the payment settings container */\n.payment-settings-container[data-v-8d762e8a] {\n  padding: 20px;\n  background-color: #f9f9f9;\n  border-radius: 8px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n  max-width: 800px;\n  margin: 0 auto;\n}\n.settings-title[data-v-8d762e8a] {\n  text-align: center;\n  color: #333;\n  font-size: 24px;\n  margin-bottom: 20px;\n}\n.settings-section[data-v-8d762e8a] {\n  margin-bottom: 30px;\n}\n.section-title[data-v-8d762e8a] {\n  font-size: 20px;\n  color: #333;\n  border-bottom: 2px solid #ddd;\n  padding-bottom: 8px;\n  margin-bottom: 15px;\n}\n.form-group[data-v-8d762e8a] {\n  margin-bottom: 1.5rem;\n}\n.form-label[data-v-8d762e8a] {\n  font-size: 16px;\n  color: #333;\n}\n.form-control[data-v-8d762e8a] {\n  width: 100%;\n  padding: 12px;\n  border-radius: 5px;\n  border: 1px solid #ccc;\n  font-size: 14px;\n  transition: border-color 0.3s ease;\n}\n.form-control[data-v-8d762e8a]:focus {\n  border-color: #1E90FF;\n}\n.checkbox-input[data-v-8d762e8a] {\n  width: auto;\n  height: 20px;\n  margin-right: 10px;\n}\n.btn-update[data-v-8d762e8a] {\n  background-color: #1E90FF;\n  color: white;\n  border: none;\n  padding: 12px 20px;\n  border-radius: 5px;\n  cursor: pointer;\n  font-size: 16px;\n}\n.btn-update[data-v-8d762e8a]:hover {\n  background-color: #187bcd;\n}\n.reminder-note[data-v-8d762e8a] {\n  margin-top: 20px;\n  border-radius: 5px;\n  text-align: center;\n  font-size: 14px;\n  color: #333;\n  background-color: orange;\n}\n\n/* Enhanced Styling for Select Dropdown */\nselect.form-control[data-v-8d762e8a] {\n  padding: 12px;\n  background-color: #fff;\n  border: 1px solid #ccc;\n  border-radius: 5px;\n  font-size: 14px;\n  transition: border-color 0.3s ease, background-color 0.3s ease;\n}\nselect.form-control[data-v-8d762e8a]:focus {\n  border-color: #1E90FF;\n  background-color: #f0f8ff; /* Light blue background on focus */\n  outline: none;\n}\nselect.form-control option[data-v-8d762e8a] {\n  padding: 10px;\n}\n\n/* Styling for the payment settings buttons */\n.btn-update[data-v-8d762e8a] {\n  background-color: #1E90FF;\n  color: white;\n  border: none;\n  padding: 12px 20px;\n  border-radius: 5px;\n  cursor: pointer;\n  font-size: 16px;\n}\n.btn-update[data-v-8d762e8a]:hover {\n  background-color: #187bcd;\n}\n\n/* Modal Styling */\n.modal-overlay[data-v-8d762e8a] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: rgba(0, 0, 0, 0.5);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.modal-content[data-v-8d762e8a] {\n  background-color: #fff;\n  padding: 20px;\n  border-radius: 8px;\n  max-width: 400px;\n  width: 100%;\n}\n.modal-header[data-v-8d762e8a] {\n  font-size: 18px;\n  font-weight: bold;\n}\n.modal-header.success[data-v-8d762e8a] {\n  color: #28a745;\n}\n.modal-header.error[data-v-8d762e8a] {\n  color: #dc3545;\n}\n.modal-footer[data-v-8d762e8a] {\n  display: flex;\n  justify-content: flex-end;\n}\n.btn-closing[data-v-8d762e8a] {\n  padding: 10px 20px;\n  font-size: 16px;\n  text-align: center;\n  background: none;\n  border: none;\n  width: auto;\n  background-color: #1F2A44 !important;\n  color: #fff;\n}\n.btn-closing[data-v-8d762e8a]:hover {\n  background-color: #0056b3;\n}\n\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/SmsSetting.vue?vue&type=style&index=0&id=06223ff0&scoped=true&lang=css":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/SmsSetting.vue?vue&type=style&index=0&id=06223ff0&scoped=true&lang=css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n/* Styling for the SMS settings container */\n.sms-settings-container[data-v-06223ff0] {\n  padding: 20px;\n  background-color: #f9f9f9;\n  border-radius: 8px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n  max-width: 800px;\n  margin: 0 auto;\n}\n.settings-title[data-v-06223ff0] {\n  text-align: center;\n  color: #333;\n  font-size: 24px;\n  margin-bottom: 20px;\n}\n.settings-section[data-v-06223ff0] {\n  margin-bottom: 30px;\n}\n.section-title[data-v-06223ff0] {\n  font-size: 20px;\n  color: #333;\n  border-bottom: 2px solid #ddd;\n  padding-bottom: 8px;\n  margin-bottom: 15px;\n}\n.form-group[data-v-06223ff0] {\n  margin-bottom: 1.5rem;\n}\n.form-label[data-v-06223ff0] {\n  font-size: 16px;\n  color: #333;\n}\n.form-control[data-v-06223ff0] {\n  width: 100%;\n  padding: 12px;\n  border-radius: 5px;\n  border: 1px solid #ccc;\n  font-size: 14px;\n  transition: border-color 0.3s ease;\n}\n.form-control[data-v-06223ff0]:focus {\n  border-color: #1E90FF;\n}\n.checkbox-input[data-v-06223ff0] {\n  width: auto;\n  height: 20px;\n  margin-right: 10px;\n}\n.btn-update[data-v-06223ff0] {\n  background-color: #1E90FF;\n  color: white;\n  border: none;\n  padding: 12px 20px;\n  border-radius: 5px;\n  cursor: pointer;\n  font-size: 16px;\n}\n.btn-update[data-v-06223ff0]:hover {\n  background-color: #187bcd;\n}\n.reminder-note[data-v-06223ff0] {\n  margin-top: 20px;\n  border-radius: 5px;\n  text-align: center;\n  font-size: 14px;\n  color: #333;\n  background-color: orange;\n}\n\n/* Modal Styling */\n.modal-overlay[data-v-06223ff0] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: rgba(0, 0, 0, 0.5);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.modal-content[data-v-06223ff0] {\n  background-color: #fff;\n  padding: 20px;\n  border-radius: 8px;\n  max-width: 400px;\n  width: 100%;\n}\n.modal-header[data-v-06223ff0] {\n  font-size: 18px;\n  font-weight: bold;\n}\n.modal-header.success[data-v-06223ff0] {\n  color: #28a745;\n}\n.modal-header.error[data-v-06223ff0] {\n  color: #dc3545;\n}\n.modal-footer[data-v-06223ff0] {\n  display: flex;\n  justify-content: flex-end;\n}\n.btn-closing[data-v-06223ff0] {\n  padding: 10px 20px;\n  font-size: 16px;\n  text-align: center;\n  background: none;\n  border: none;\n  width: auto;\n  background-color: #1F2A44 !important;\n  color: #fff;\n}\n.btn-closing[data-v-06223ff0]:hover {\n  background-color: #0056b3;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -45390,6 +46015,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/EmailSetting.vue?vue&type=style&index=0&id=1cc12fa5&scoped=true&lang=css":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/EmailSetting.vue?vue&type=style&index=0&id=1cc12fa5&scoped=true&lang=css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_EmailSetting_vue_vue_type_style_index_0_id_1cc12fa5_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./EmailSetting.vue?vue&type=style&index=0&id=1cc12fa5&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/EmailSetting.vue?vue&type=style&index=0&id=1cc12fa5&scoped=true&lang=css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_EmailSetting_vue_vue_type_style_index_0_id_1cc12fa5_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_EmailSetting_vue_vue_type_style_index_0_id_1cc12fa5_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/PaymentSetting.vue?vue&type=style&index=0&id=8d762e8a&scoped=true&lang=css":
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/PaymentSetting.vue?vue&type=style&index=0&id=8d762e8a&scoped=true&lang=css ***!
@@ -45417,6 +46072,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_PaymentSetting_vue_vue_type_style_index_0_id_8d762e8a_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/SmsSetting.vue?vue&type=style&index=0&id=06223ff0&scoped=true&lang=css":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/SmsSetting.vue?vue&type=style&index=0&id=06223ff0&scoped=true&lang=css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SmsSetting_vue_vue_type_style_index_0_id_06223ff0_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./SmsSetting.vue?vue&type=style&index=0&id=06223ff0&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/SmsSetting.vue?vue&type=style&index=0&id=06223ff0&scoped=true&lang=css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SmsSetting_vue_vue_type_style_index_0_id_06223ff0_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SmsSetting_vue_vue_type_style_index_0_id_06223ff0_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -53729,6 +54414,82 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Admin/Settings/EmailSetting.vue":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/Admin/Settings/EmailSetting.vue ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _EmailSetting_vue_vue_type_template_id_1cc12fa5_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EmailSetting.vue?vue&type=template&id=1cc12fa5&scoped=true */ "./resources/js/components/Admin/Settings/EmailSetting.vue?vue&type=template&id=1cc12fa5&scoped=true");
+/* harmony import */ var _EmailSetting_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EmailSetting.vue?vue&type=script&lang=js */ "./resources/js/components/Admin/Settings/EmailSetting.vue?vue&type=script&lang=js");
+/* harmony import */ var _EmailSetting_vue_vue_type_style_index_0_id_1cc12fa5_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./EmailSetting.vue?vue&type=style&index=0&id=1cc12fa5&scoped=true&lang=css */ "./resources/js/components/Admin/Settings/EmailSetting.vue?vue&type=style&index=0&id=1cc12fa5&scoped=true&lang=css");
+/* harmony import */ var _node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+
+
+const __exports__ = /*#__PURE__*/(0,_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_EmailSetting_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_EmailSetting_vue_vue_type_template_id_1cc12fa5_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-1cc12fa5"],['__file',"resources/js/components/Admin/Settings/EmailSetting.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/Admin/Settings/EmailSetting.vue?vue&type=script&lang=js":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/Admin/Settings/EmailSetting.vue?vue&type=script&lang=js ***!
+  \*****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_EmailSetting_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_EmailSetting_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./EmailSetting.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/EmailSetting.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/components/Admin/Settings/EmailSetting.vue?vue&type=style&index=0&id=1cc12fa5&scoped=true&lang=css":
+/*!*************************************************************************************************************************!*\
+  !*** ./resources/js/components/Admin/Settings/EmailSetting.vue?vue&type=style&index=0&id=1cc12fa5&scoped=true&lang=css ***!
+  \*************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_EmailSetting_vue_vue_type_style_index_0_id_1cc12fa5_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader/dist/cjs.js!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./EmailSetting.vue?vue&type=style&index=0&id=1cc12fa5&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/EmailSetting.vue?vue&type=style&index=0&id=1cc12fa5&scoped=true&lang=css");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Admin/Settings/EmailSetting.vue?vue&type=template&id=1cc12fa5&scoped=true":
+/*!***********************************************************************************************************!*\
+  !*** ./resources/js/components/Admin/Settings/EmailSetting.vue?vue&type=template&id=1cc12fa5&scoped=true ***!
+  \***********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_EmailSetting_vue_vue_type_template_id_1cc12fa5_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_EmailSetting_vue_vue_type_template_id_1cc12fa5_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./EmailSetting.vue?vue&type=template&id=1cc12fa5&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/EmailSetting.vue?vue&type=template&id=1cc12fa5&scoped=true");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Admin/Settings/PaymentSetting.vue":
 /*!*******************************************************************!*\
   !*** ./resources/js/components/Admin/Settings/PaymentSetting.vue ***!
@@ -53801,6 +54562,82 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_PaymentSetting_vue_vue_type_template_id_8d762e8a_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_PaymentSetting_vue_vue_type_template_id_8d762e8a_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./PaymentSetting.vue?vue&type=template&id=8d762e8a&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/PaymentSetting.vue?vue&type=template&id=8d762e8a&scoped=true");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Admin/Settings/SmsSetting.vue":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/Admin/Settings/SmsSetting.vue ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _SmsSetting_vue_vue_type_template_id_06223ff0_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SmsSetting.vue?vue&type=template&id=06223ff0&scoped=true */ "./resources/js/components/Admin/Settings/SmsSetting.vue?vue&type=template&id=06223ff0&scoped=true");
+/* harmony import */ var _SmsSetting_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SmsSetting.vue?vue&type=script&lang=js */ "./resources/js/components/Admin/Settings/SmsSetting.vue?vue&type=script&lang=js");
+/* harmony import */ var _SmsSetting_vue_vue_type_style_index_0_id_06223ff0_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SmsSetting.vue?vue&type=style&index=0&id=06223ff0&scoped=true&lang=css */ "./resources/js/components/Admin/Settings/SmsSetting.vue?vue&type=style&index=0&id=06223ff0&scoped=true&lang=css");
+/* harmony import */ var _node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+
+
+const __exports__ = /*#__PURE__*/(0,_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_SmsSetting_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_SmsSetting_vue_vue_type_template_id_06223ff0_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-06223ff0"],['__file',"resources/js/components/Admin/Settings/SmsSetting.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/Admin/Settings/SmsSetting.vue?vue&type=script&lang=js":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/Admin/Settings/SmsSetting.vue?vue&type=script&lang=js ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SmsSetting_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SmsSetting_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./SmsSetting.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/SmsSetting.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/components/Admin/Settings/SmsSetting.vue?vue&type=style&index=0&id=06223ff0&scoped=true&lang=css":
+/*!***********************************************************************************************************************!*\
+  !*** ./resources/js/components/Admin/Settings/SmsSetting.vue?vue&type=style&index=0&id=06223ff0&scoped=true&lang=css ***!
+  \***********************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SmsSetting_vue_vue_type_style_index_0_id_06223ff0_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader/dist/cjs.js!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./SmsSetting.vue?vue&type=style&index=0&id=06223ff0&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/SmsSetting.vue?vue&type=style&index=0&id=06223ff0&scoped=true&lang=css");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Admin/Settings/SmsSetting.vue?vue&type=template&id=06223ff0&scoped=true":
+/*!*********************************************************************************************************!*\
+  !*** ./resources/js/components/Admin/Settings/SmsSetting.vue?vue&type=template&id=06223ff0&scoped=true ***!
+  \*********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SmsSetting_vue_vue_type_template_id_06223ff0_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SmsSetting_vue_vue_type_template_id_06223ff0_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./SmsSetting.vue?vue&type=template&id=06223ff0&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Admin/Settings/SmsSetting.vue?vue&type=template&id=06223ff0&scoped=true");
 
 
 /***/ }),
@@ -55336,7 +56173,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.mjs");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.mjs");
 /* harmony import */ var _store_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../store/index.js */ "./resources/js/store/index.js");
 /* harmony import */ var _components_Frontend_Services_ServicesList_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Frontend/Services/ServicesList.vue */ "./resources/js/components/Frontend/Services/ServicesList.vue");
 /* harmony import */ var _components_Frontend_Services_ServicePage_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Frontend/Services/ServicePage.vue */ "./resources/js/components/Frontend/Services/ServicePage.vue");
@@ -55354,26 +56191,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Admin_Dashboard_AdminDashboard_vue__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/Admin/Dashboard/AdminDashboard.vue */ "./resources/js/components/Admin/Dashboard/AdminDashboard.vue");
 /* harmony import */ var _components_Admin_BuisnessHours_BuisnessHours_vue__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/Admin/BuisnessHours/BuisnessHours.vue */ "./resources/js/components/Admin/BuisnessHours/BuisnessHours.vue");
 /* harmony import */ var _components_Admin_Settings_PaymentSetting_vue__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/Admin/Settings/PaymentSetting.vue */ "./resources/js/components/Admin/Settings/PaymentSetting.vue");
-/* harmony import */ var _components_Admin_Customize_GeneralCustomize_vue__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/Admin/Customize/GeneralCustomize.vue */ "./resources/js/components/Admin/Customize/GeneralCustomize.vue");
-/* harmony import */ var _components_Admin_Customize_HomePageHeader_vue__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../components/Admin/Customize/HomePageHeader.vue */ "./resources/js/components/Admin/Customize/HomePageHeader.vue");
-/* harmony import */ var _components_Admin_Customers_Customers_vue__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../components/Admin/Customers/Customers.vue */ "./resources/js/components/Admin/Customers/Customers.vue");
-/* harmony import */ var _components_Admin_Customers_AddCustomer_vue__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../components/Admin/Customers/AddCustomer.vue */ "./resources/js/components/Admin/Customers/AddCustomer.vue");
-/* harmony import */ var _components_Admin_Customers_EditCustomer_vue__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../components/Admin/Customers/EditCustomer.vue */ "./resources/js/components/Admin/Customers/EditCustomer.vue");
-/* harmony import */ var _components_Admin_Customers_ContactMessages_vue__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../components/Admin/Customers/ContactMessages.vue */ "./resources/js/components/Admin/Customers/ContactMessages.vue");
-/* harmony import */ var _components_Admin_Services_Services_vue__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../components/Admin/Services/Services.vue */ "./resources/js/components/Admin/Services/Services.vue");
-/* harmony import */ var _components_Admin_Services_AddService_vue__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../components/Admin/Services/AddService.vue */ "./resources/js/components/Admin/Services/AddService.vue");
-/* harmony import */ var _components_Admin_Services_EditService_vue__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../components/Admin/Services/EditService.vue */ "./resources/js/components/Admin/Services/EditService.vue");
-/* harmony import */ var _components_Admin_Lessons_ManageLessons_vue__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../components/Admin/Lessons/ManageLessons.vue */ "./resources/js/components/Admin/Lessons/ManageLessons.vue");
-/* harmony import */ var _components_Admin_Lessons_AddLesson_vue__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../components/Admin/Lessons/AddLesson.vue */ "./resources/js/components/Admin/Lessons/AddLesson.vue");
-/* harmony import */ var _components_Admin_Lessons_EditLesson_vue__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../components/Admin/Lessons/EditLesson.vue */ "./resources/js/components/Admin/Lessons/EditLesson.vue");
-/* harmony import */ var _components_Admin_Bookings_Bookings_vue__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../components/Admin/Bookings/Bookings.vue */ "./resources/js/components/Admin/Bookings/Bookings.vue");
-/* harmony import */ var _components_Admin_Bookings_BookingDetails_vue__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../components/Admin/Bookings/BookingDetails.vue */ "./resources/js/components/Admin/Bookings/BookingDetails.vue");
-/* harmony import */ var _components_Frontend_MyBookings_vue__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../components/Frontend/MyBookings.vue */ "./resources/js/components/Frontend/MyBookings.vue");
-/* harmony import */ var _components_Admin_Review_AddReview_vue__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../components/Admin/Review/AddReview.vue */ "./resources/js/components/Admin/Review/AddReview.vue");
-/* harmony import */ var _components_Admin_Review_ReviewList_vue__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../components/Admin/Review/ReviewList.vue */ "./resources/js/components/Admin/Review/ReviewList.vue");
-/* harmony import */ var _components_Admin_CustomersHistories_ManageHistories_vue__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../components/Admin/CustomersHistories/ManageHistories.vue */ "./resources/js/components/Admin/CustomersHistories/ManageHistories.vue");
-/* harmony import */ var _components_Admin_CustomersHistories_AddPatientHistory_vue__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../components/Admin/CustomersHistories/AddPatientHistory.vue */ "./resources/js/components/Admin/CustomersHistories/AddPatientHistory.vue");
-/* harmony import */ var _components_Admin_CustomersHistories_EditPatientHistory_vue__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ../components/Admin/CustomersHistories/EditPatientHistory.vue */ "./resources/js/components/Admin/CustomersHistories/EditPatientHistory.vue");
+/* harmony import */ var _components_Admin_Settings_EmailSetting_vue__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/Admin/Settings/EmailSetting.vue */ "./resources/js/components/Admin/Settings/EmailSetting.vue");
+/* harmony import */ var _components_Admin_Settings_SmsSetting_vue__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../components/Admin/Settings/SmsSetting.vue */ "./resources/js/components/Admin/Settings/SmsSetting.vue");
+/* harmony import */ var _components_Admin_Customize_GeneralCustomize_vue__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../components/Admin/Customize/GeneralCustomize.vue */ "./resources/js/components/Admin/Customize/GeneralCustomize.vue");
+/* harmony import */ var _components_Admin_Customize_HomePageHeader_vue__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../components/Admin/Customize/HomePageHeader.vue */ "./resources/js/components/Admin/Customize/HomePageHeader.vue");
+/* harmony import */ var _components_Admin_Customers_Customers_vue__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../components/Admin/Customers/Customers.vue */ "./resources/js/components/Admin/Customers/Customers.vue");
+/* harmony import */ var _components_Admin_Customers_AddCustomer_vue__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../components/Admin/Customers/AddCustomer.vue */ "./resources/js/components/Admin/Customers/AddCustomer.vue");
+/* harmony import */ var _components_Admin_Customers_EditCustomer_vue__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../components/Admin/Customers/EditCustomer.vue */ "./resources/js/components/Admin/Customers/EditCustomer.vue");
+/* harmony import */ var _components_Admin_Customers_ContactMessages_vue__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../components/Admin/Customers/ContactMessages.vue */ "./resources/js/components/Admin/Customers/ContactMessages.vue");
+/* harmony import */ var _components_Admin_Services_Services_vue__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../components/Admin/Services/Services.vue */ "./resources/js/components/Admin/Services/Services.vue");
+/* harmony import */ var _components_Admin_Services_AddService_vue__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../components/Admin/Services/AddService.vue */ "./resources/js/components/Admin/Services/AddService.vue");
+/* harmony import */ var _components_Admin_Services_EditService_vue__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../components/Admin/Services/EditService.vue */ "./resources/js/components/Admin/Services/EditService.vue");
+/* harmony import */ var _components_Admin_Lessons_ManageLessons_vue__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../components/Admin/Lessons/ManageLessons.vue */ "./resources/js/components/Admin/Lessons/ManageLessons.vue");
+/* harmony import */ var _components_Admin_Lessons_AddLesson_vue__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../components/Admin/Lessons/AddLesson.vue */ "./resources/js/components/Admin/Lessons/AddLesson.vue");
+/* harmony import */ var _components_Admin_Lessons_EditLesson_vue__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../components/Admin/Lessons/EditLesson.vue */ "./resources/js/components/Admin/Lessons/EditLesson.vue");
+/* harmony import */ var _components_Admin_Bookings_Bookings_vue__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../components/Admin/Bookings/Bookings.vue */ "./resources/js/components/Admin/Bookings/Bookings.vue");
+/* harmony import */ var _components_Admin_Bookings_BookingDetails_vue__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../components/Admin/Bookings/BookingDetails.vue */ "./resources/js/components/Admin/Bookings/BookingDetails.vue");
+/* harmony import */ var _components_Frontend_MyBookings_vue__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../components/Frontend/MyBookings.vue */ "./resources/js/components/Frontend/MyBookings.vue");
+/* harmony import */ var _components_Admin_Review_AddReview_vue__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../components/Admin/Review/AddReview.vue */ "./resources/js/components/Admin/Review/AddReview.vue");
+/* harmony import */ var _components_Admin_Review_ReviewList_vue__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../components/Admin/Review/ReviewList.vue */ "./resources/js/components/Admin/Review/ReviewList.vue");
+/* harmony import */ var _components_Admin_CustomersHistories_ManageHistories_vue__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ../components/Admin/CustomersHistories/ManageHistories.vue */ "./resources/js/components/Admin/CustomersHistories/ManageHistories.vue");
+/* harmony import */ var _components_Admin_CustomersHistories_AddPatientHistory_vue__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ../components/Admin/CustomersHistories/AddPatientHistory.vue */ "./resources/js/components/Admin/CustomersHistories/AddPatientHistory.vue");
+/* harmony import */ var _components_Admin_CustomersHistories_EditPatientHistory_vue__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ../components/Admin/CustomersHistories/EditPatientHistory.vue */ "./resources/js/components/Admin/CustomersHistories/EditPatientHistory.vue");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
@@ -55399,6 +56238,8 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 
 // Admin Components
+
+
 
 
 
@@ -55484,7 +56325,7 @@ var routes = [{
     }, {
       name: 'mybookings',
       path: 'mybookings',
-      component: _components_Frontend_MyBookings_vue__WEBPACK_IMPORTED_MODULE_31__["default"]
+      component: _components_Frontend_MyBookings_vue__WEBPACK_IMPORTED_MODULE_33__["default"]
     }]
   }]
 }, {
@@ -55500,7 +56341,7 @@ var routes = [{
   }, {
     name: 'Services',
     path: 'services',
-    component: _components_Admin_Services_Services_vue__WEBPACK_IMPORTED_MODULE_23__["default"]
+    component: _components_Admin_Services_Services_vue__WEBPACK_IMPORTED_MODULE_25__["default"]
   }, {
     name: 'BuisnessHours',
     path: 'buisnesshours',
@@ -55508,71 +56349,79 @@ var routes = [{
   }, {
     name: 'AddReview',
     path: 'reviews/add',
-    component: _components_Admin_Review_AddReview_vue__WEBPACK_IMPORTED_MODULE_32__["default"]
+    component: _components_Admin_Review_AddReview_vue__WEBPACK_IMPORTED_MODULE_34__["default"]
   }, {
     name: 'Reviews',
     path: 'reviews',
-    component: _components_Admin_Review_ReviewList_vue__WEBPACK_IMPORTED_MODULE_33__["default"]
+    component: _components_Admin_Review_ReviewList_vue__WEBPACK_IMPORTED_MODULE_35__["default"]
   }, {
     path: 'bookings',
     name: 'Bookings',
-    component: _components_Admin_Bookings_Bookings_vue__WEBPACK_IMPORTED_MODULE_29__["default"]
+    component: _components_Admin_Bookings_Bookings_vue__WEBPACK_IMPORTED_MODULE_31__["default"]
   }, {
     name: 'BackendBookingDetails',
     path: 'booking/:id',
-    component: _components_Admin_Bookings_BookingDetails_vue__WEBPACK_IMPORTED_MODULE_30__["default"]
+    component: _components_Admin_Bookings_BookingDetails_vue__WEBPACK_IMPORTED_MODULE_32__["default"]
   }, {
     name: 'AddServices',
     path: 'services/add',
-    component: _components_Admin_Services_AddService_vue__WEBPACK_IMPORTED_MODULE_24__["default"]
+    component: _components_Admin_Services_AddService_vue__WEBPACK_IMPORTED_MODULE_26__["default"]
   }, {
     path: 'services/edit/:id',
     name: 'EditService',
-    component: _components_Admin_Services_EditService_vue__WEBPACK_IMPORTED_MODULE_25__["default"]
+    component: _components_Admin_Services_EditService_vue__WEBPACK_IMPORTED_MODULE_27__["default"]
   }, {
     name: 'Customers',
     path: 'patients',
-    component: _components_Admin_Customers_Customers_vue__WEBPACK_IMPORTED_MODULE_19__["default"]
+    component: _components_Admin_Customers_Customers_vue__WEBPACK_IMPORTED_MODULE_21__["default"]
   }, {
     name: 'AddCustomer',
     path: 'patients/add',
-    component: _components_Admin_Customers_AddCustomer_vue__WEBPACK_IMPORTED_MODULE_20__["default"]
+    component: _components_Admin_Customers_AddCustomer_vue__WEBPACK_IMPORTED_MODULE_22__["default"]
   }, {
     path: 'patients/edit/:id',
     name: 'EditCustomer',
-    component: _components_Admin_Customers_EditCustomer_vue__WEBPACK_IMPORTED_MODULE_21__["default"]
+    component: _components_Admin_Customers_EditCustomer_vue__WEBPACK_IMPORTED_MODULE_23__["default"]
   }, {
     path: 'patients/:patientId/histories',
     name: 'ManageHistories',
-    component: _components_Admin_CustomersHistories_ManageHistories_vue__WEBPACK_IMPORTED_MODULE_34__["default"]
+    component: _components_Admin_CustomersHistories_ManageHistories_vue__WEBPACK_IMPORTED_MODULE_36__["default"]
   }, {
     path: '/patients/:patientId/add-history',
     name: 'AddPatientHistory',
-    component: _components_Admin_CustomersHistories_AddPatientHistory_vue__WEBPACK_IMPORTED_MODULE_35__["default"]
+    component: _components_Admin_CustomersHistories_AddPatientHistory_vue__WEBPACK_IMPORTED_MODULE_37__["default"]
   }, {
     path: 'patients/:patientId/histories/edit/:historyId',
     name: 'EditPatientHistory',
-    component: _components_Admin_CustomersHistories_EditPatientHistory_vue__WEBPACK_IMPORTED_MODULE_36__["default"]
+    component: _components_Admin_CustomersHistories_EditPatientHistory_vue__WEBPACK_IMPORTED_MODULE_38__["default"]
   }, {
     path: 'contact-messages',
     name: 'ContactMessages',
-    component: _components_Admin_Customers_ContactMessages_vue__WEBPACK_IMPORTED_MODULE_22__["default"]
+    component: _components_Admin_Customers_ContactMessages_vue__WEBPACK_IMPORTED_MODULE_24__["default"]
   }, {
     name: 'PaymentSetting',
     path: 'paymentsetting',
     component: _components_Admin_Settings_PaymentSetting_vue__WEBPACK_IMPORTED_MODULE_16__["default"]
   }, {
+    name: 'EmailSetting',
+    path: 'emailsetting',
+    component: _components_Admin_Settings_EmailSetting_vue__WEBPACK_IMPORTED_MODULE_17__["default"]
+  }, {
+    name: 'SmsSetting',
+    path: 'smssetting',
+    component: _components_Admin_Settings_SmsSetting_vue__WEBPACK_IMPORTED_MODULE_18__["default"]
+  }, {
     name: 'GeneralCustomize',
     path: 'generalcustomize',
-    component: _components_Admin_Customize_GeneralCustomize_vue__WEBPACK_IMPORTED_MODULE_17__["default"]
+    component: _components_Admin_Customize_GeneralCustomize_vue__WEBPACK_IMPORTED_MODULE_19__["default"]
   }, {
     name: 'HomePageHeader',
     path: 'customize/homepageheader',
-    component: _components_Admin_Customize_HomePageHeader_vue__WEBPACK_IMPORTED_MODULE_18__["default"]
+    component: _components_Admin_Customize_HomePageHeader_vue__WEBPACK_IMPORTED_MODULE_20__["default"]
   }]
 }];
-var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_37__.createRouter)({
-  history: (0,vue_router__WEBPACK_IMPORTED_MODULE_37__.createWebHistory)(),
+var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_39__.createRouter)({
+  history: (0,vue_router__WEBPACK_IMPORTED_MODULE_39__.createWebHistory)(),
   routes: routes
 });
 router.beforeEach(/*#__PURE__*/function () {
@@ -55637,7 +56486,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
 /* harmony import */ var _modules_auth_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/auth.js */ "./resources/js/store/modules/auth.js");
 /* harmony import */ var _modules_keys_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/keys.js */ "./resources/js/store/modules/keys.js");
 /* harmony import */ var _modules_backend_paymentSetting_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/backend/paymentSetting.js */ "./resources/js/store/modules/backend/paymentSetting.js");
@@ -55657,6 +56506,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_services_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./modules/services.js */ "./resources/js/store/modules/services.js");
 /* harmony import */ var _modules_backend_customers_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./modules/backend/customers.js */ "./resources/js/store/modules/backend/customers.js");
 /* harmony import */ var _modules_backend_patienthistories_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modules/backend/patienthistories.js */ "./resources/js/store/modules/backend/patienthistories.js");
+/* harmony import */ var _modules_backend_emailSetting_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modules/backend/emailSetting.js */ "./resources/js/store/modules/backend/emailSetting.js");
+/* harmony import */ var _modules_backend_smsSetting_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modules/backend/smsSetting.js */ "./resources/js/store/modules/backend/smsSetting.js");
  // Updated import
 
 
@@ -55677,13 +56528,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var store = (0,vuex__WEBPACK_IMPORTED_MODULE_19__.createStore)({
+
+
+var store = (0,vuex__WEBPACK_IMPORTED_MODULE_21__.createStore)({
   modules: {
     backendServices: _modules_backend_services_js__WEBPACK_IMPORTED_MODULE_9__["default"],
     // Corrected module name
     services: _modules_services_js__WEBPACK_IMPORTED_MODULE_16__["default"],
     auth: _modules_auth_js__WEBPACK_IMPORTED_MODULE_0__["default"],
     paymentSetting: _modules_backend_paymentSetting_js__WEBPACK_IMPORTED_MODULE_2__["default"],
+    emailSetting: _modules_backend_emailSetting_js__WEBPACK_IMPORTED_MODULE_19__["default"],
+    smsSetting: _modules_backend_smsSetting_js__WEBPACK_IMPORTED_MODULE_20__["default"],
     keys: _modules_keys_js__WEBPACK_IMPORTED_MODULE_1__["default"],
     backendHomePageHeader: _modules_backend_HomePageHeader_js__WEBPACK_IMPORTED_MODULE_3__["default"],
     backendUsers: _modules_backend_users_js__WEBPACK_IMPORTED_MODULE_4__["default"],
@@ -56699,6 +57554,165 @@ var getters = {
   },
   currentCustomer: function currentCustomer(state) {
     return state.customer;
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  namespaced: true,
+  state: state,
+  mutations: mutations,
+  actions: actions,
+  getters: getters
+});
+
+/***/ }),
+
+/***/ "./resources/js/store/modules/backend/emailSetting.js":
+/*!************************************************************!*\
+  !*** ./resources/js/store/modules/backend/emailSetting.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _utils_axios_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../utils/axios.js */ "./resources/js/utils/axios.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+ // Import axios instance (adjust the path if needed)
+
+var state = {
+  emailEnabled: false,
+  mailProvider: '',
+  // Generic mail provider (e.g., Mailgun, SendGrid, etc.)
+  mailHost: '',
+  mailPort: '',
+  mailUsername: '',
+  mailPassword: '',
+  mailEncryption: '',
+  mailFromAddress: '',
+  mailFromName: ''
+};
+var mutations = {
+  SET_EMAIL_SETTINGS: function SET_EMAIL_SETTINGS(state, settings) {
+    // Set email settings based on the provider (Mailgun, SendGrid, etc.)
+    state.emailEnabled = settings.enabled;
+    state.mailProvider = settings.provider;
+    state.mailHost = settings.host;
+    state.mailPort = settings.port;
+    state.mailUsername = settings.username;
+    state.mailPassword = settings.password;
+    state.mailEncryption = settings.encryption || '';
+    state.mailFromAddress = settings.from_address;
+    state.mailFromName = settings.from_name;
+  },
+  UPDATE_EMAIL_SETTINGS: function UPDATE_EMAIL_SETTINGS(state, settings) {
+    // Update email settings when modifying
+    state.emailEnabled = settings.enabled;
+    state.mailProvider = settings.provider;
+    state.mailHost = settings.host;
+    state.mailPort = settings.port;
+    state.mailUsername = settings.username;
+    state.mailPassword = settings.password;
+    state.mailEncryption = settings.encryption;
+    state.mailFromAddress = settings.from_address;
+    state.mailFromName = settings.from_name;
+  }
+};
+var actions = {
+  fetchEmailSettings: function fetchEmailSettings(_ref) {
+    return _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var commit, response, settings;
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            commit = _ref.commit;
+            _context.prev = 1;
+            _context.next = 4;
+            return _utils_axios_js__WEBPACK_IMPORTED_MODULE_0__["default"].get('/admin/emailsettings');
+          case 4:
+            response = _context.sent;
+            console.log('Raw API Response:', response.data); // Log API response
+            settings = response.data[0]; // Extract first item (if array)
+            commit('SET_EMAIL_SETTINGS', settings);
+            console.log('State after committing:', settings);
+            _context.next = 14;
+            break;
+          case 11:
+            _context.prev = 11;
+            _context.t0 = _context["catch"](1);
+            console.error('Error fetching email settings:', _context.t0);
+          case 14:
+          case "end":
+            return _context.stop();
+        }
+      }, _callee, null, [[1, 11]]);
+    }))();
+  },
+  updateEmailSettings: function updateEmailSettings(_ref2, emailSettings) {
+    return _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+      var commit, response;
+      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+        while (1) switch (_context2.prev = _context2.next) {
+          case 0:
+            commit = _ref2.commit;
+            _context2.prev = 1;
+            // Log the emailSettings being sent to the API
+            console.log('Sending email settings to API:', emailSettings);
+            _context2.next = 5;
+            return _utils_axios_js__WEBPACK_IMPORTED_MODULE_0__["default"].put('/admin/emailsettings/update', emailSettings);
+          case 5:
+            response = _context2.sent;
+            // Log the response from the API
+            console.log('Response from API:', response);
+
+            // Commit the mutation to update the state
+            commit('UPDATE_EMAIL_SETTINGS', emailSettings);
+            _context2.next = 13;
+            break;
+          case 10:
+            _context2.prev = 10;
+            _context2.t0 = _context2["catch"](1);
+            // Log the error in case of failure
+            console.error('Error updating email settings:', _context2.t0);
+          case 13:
+          case "end":
+            return _context2.stop();
+        }
+      }, _callee2, null, [[1, 10]]);
+    }))();
+  }
+};
+var getters = {
+  isEmailEnabled: function isEmailEnabled(state) {
+    return state.emailEnabled;
+  },
+  mailProvider: function mailProvider(state) {
+    return state.mailProvider;
+  },
+  mailHost: function mailHost(state) {
+    return state.mailHost;
+  },
+  mailPort: function mailPort(state) {
+    return state.mailPort;
+  },
+  mailUsername: function mailUsername(state) {
+    return state.mailUsername;
+  },
+  mailPassword: function mailPassword(state) {
+    return state.mailPassword;
+  },
+  mailEncryption: function mailEncryption(state) {
+    return state.mailEncryption;
+  },
+  mailFromAddress: function mailFromAddress(state) {
+    return state.mailFromAddress;
+  },
+  mailFromName: function mailFromName(state) {
+    return state.mailFromName;
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -57803,6 +58817,130 @@ var getters = {
   },
   currentService: function currentService(state) {
     return state.service;
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  namespaced: true,
+  state: state,
+  mutations: mutations,
+  actions: actions,
+  getters: getters
+});
+
+/***/ }),
+
+/***/ "./resources/js/store/modules/backend/smsSetting.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/store/modules/backend/smsSetting.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _utils_axios_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../utils/axios.js */ "./resources/js/utils/axios.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+ // Import axios instance (adjust the path if needed)
+
+var state = {
+  smsEnabled: false,
+  smsProvider: 'twilio',
+  // Default to Twilio
+  smsSid: '',
+  smsAuthToken: '',
+  smsPhoneNumber: ''
+};
+var mutations = {
+  SET_SMS_SETTINGS: function SET_SMS_SETTINGS(state, settings) {
+    state.smsEnabled = settings.enabled;
+    state.smsProvider = settings.provider;
+    state.smsSid = settings.sid;
+    state.smsAuthToken = settings.auth_token;
+    state.smsPhoneNumber = settings.phone_number;
+  },
+  UPDATE_SMS_SETTINGS: function UPDATE_SMS_SETTINGS(state, settings) {
+    state.smsEnabled = settings.enabled;
+    state.smsProvider = settings.provider;
+    state.smsSid = settings.sid;
+    state.smsAuthToken = settings.auth_token;
+    state.smsPhoneNumber = settings.phone_number;
+  }
+};
+var actions = {
+  fetchSmsSettings: function fetchSmsSettings(_ref) {
+    return _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var commit, response, settings;
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            commit = _ref.commit;
+            _context.prev = 1;
+            _context.next = 4;
+            return _utils_axios_js__WEBPACK_IMPORTED_MODULE_0__["default"].get('/admin/smssettings');
+          case 4:
+            response = _context.sent;
+            settings = response.data[0];
+            commit('SET_SMS_SETTINGS', settings);
+            _context.next = 12;
+            break;
+          case 9:
+            _context.prev = 9;
+            _context.t0 = _context["catch"](1);
+            console.error('Error fetching SMS settings:', _context.t0);
+          case 12:
+          case "end":
+            return _context.stop();
+        }
+      }, _callee, null, [[1, 9]]);
+    }))();
+  },
+  updateSmsSettings: function updateSmsSettings(_ref2, smsSettings) {
+    return _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+      var commit, response;
+      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+        while (1) switch (_context2.prev = _context2.next) {
+          case 0:
+            commit = _ref2.commit;
+            _context2.prev = 1;
+            _context2.next = 4;
+            return _utils_axios_js__WEBPACK_IMPORTED_MODULE_0__["default"].put('/admin/smssettings/update', smsSettings);
+          case 4:
+            response = _context2.sent;
+            commit('UPDATE_SMS_SETTINGS', smsSettings);
+            _context2.next = 11;
+            break;
+          case 8:
+            _context2.prev = 8;
+            _context2.t0 = _context2["catch"](1);
+            console.error('Error updating SMS settings:', _context2.t0);
+          case 11:
+          case "end":
+            return _context2.stop();
+        }
+      }, _callee2, null, [[1, 8]]);
+    }))();
+  }
+};
+var getters = {
+  isSmsEnabled: function isSmsEnabled(state) {
+    return state.smsEnabled;
+  },
+  smsProvider: function smsProvider(state) {
+    return state.smsProvider;
+  },
+  smsSid: function smsSid(state) {
+    return state.smsSid;
+  },
+  smsAuthToken: function smsAuthToken(state) {
+    return state.smsAuthToken;
+  },
+  smsPhoneNumber: function smsPhoneNumber(state) {
+    return state.smsPhoneNumber;
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({

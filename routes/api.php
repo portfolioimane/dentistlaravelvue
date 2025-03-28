@@ -13,6 +13,10 @@ use App\Http\Controllers\Api\Customer\ResetPasswordController;
 
 use App\Http\Controllers\Api\Backend\PaymentSettingController as BackendPaymentSettingController;
 
+use App\Http\Controllers\Api\Backend\EmailSettingController as BackendEmailSettingController;
+
+use App\Http\Controllers\Api\Backend\SmsSettingController as BackendSmsSettingController;
+
 use App\Http\Controllers\Api\Backend\HomePageHeaderController as BackendHomePageHeaderController;
 
 use App\Http\Controllers\Api\Backend\PatientHistoriesController;
@@ -192,6 +196,16 @@ Route::prefix('users')->group(function () {
   Route::prefix('paymentsetting')->group(function () {
     Route::put('/update', [BackendPaymentSettingController::class, 'update']); // Update payment provider settings
     Route::get('/', [BackendPaymentSettingController::class, 'getSettings']); // Fetch payment provider settings
+});
+
+    Route::prefix('emailsettings')->group(function () {
+    Route::put('/update', [BackendEmailSettingController::class, 'update']); // Update payment provider settings
+    Route::get('/', [BackendEmailSettingController::class, 'getSettings']); // Fetch payment provider settings
+});
+
+    Route::prefix('smssettings')->group(function () {
+    Route::put('/update', [BackendSmsSettingController::class, 'update']); // Update payment provider settings
+    Route::get('/', [BackendSmsSettingController::class, 'getSettings']); // Fetch payment provider settings
 });
 
 

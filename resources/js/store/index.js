@@ -18,6 +18,10 @@ import buisnessHours from './modules/backend/buisnessHours.js';
 import services from './modules/services.js';
 import backendCustomers from './modules/backend/customers.js';
 import backendPatientHistories from './modules/backend/patienthistories.js';
+import emailSetting from './modules/backend/emailSetting.js';
+import smsSetting from './modules/backend/smsSetting.js';
+
+
 
 
 
@@ -27,6 +31,8 @@ const store = createStore({
     services,
     auth,
     paymentSetting,
+    emailSetting,
+    smsSetting,
     keys,
     backendHomePageHeader,
     backendUsers,

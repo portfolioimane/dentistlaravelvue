@@ -15,15 +15,23 @@ use App\Models\BuisnessHour;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 use Carbon\Carbon;
 use App\Jobs\SendBookingReminder;  // Make sure to import the SendBookingReminder job
+use App\Services\PayPalService; // Import PayPalService
 class BookingController extends Controller
 {
     private $paypal;
 
-    public function __construct()
+     public function __construct(PayPalService $paypalService)
     {
+        // Get the complete PayPal configuration from the service
+        $paypalConfig = $paypalService->getPayPalConfig();
+
         // Initialize PayPal client with API credentials
         $this->paypal = new PayPalClient;
-        $this->paypal->setApiCredentials(config('paypal'));
+
+        // Set API credentials by directly passing the entire config array
+        $this->paypal->setApiCredentials($paypalConfig);
+
+        // Set the access token
         $this->paypal->setAccessToken($this->paypal->getAccessToken());
     }
 
@@ -122,6 +130,23 @@ public function create(Request $request)
     ]);
 
 
+  /* if (in_array($validated['payment_method'], ['stripe', 'paypal'])) {
+        // Schedule the email to be sent one day before the booking date
+  $bookingDate = Carbon::parse($validated['date']);
+  $reminderTime = $bookingDate->subDay();  // Subtract one day from the booking date
+
+// If the booking is for today, schedule the reminder for later or skip
+if ($bookingDate->isToday()) {
+    // You could send the reminder immediately or set a different logic
+   SendBookingReminder::dispatch($booking)->delay(now());  // Send reminder immediately
+} else {
+    // Dispatch the job with a delay of one day
+    SendBookingReminder::dispatch($booking)->delay($reminderTime);
+}
+
+
+       Log::info('Booking reminder scheduled for booking ID: ' . $booking->id);
+   }*/
 
     return response()->json([
         'message' => 'Booking initiated successfully!',
@@ -233,7 +258,6 @@ public function getAvailableSlots(Request $request)
 
     // Get existing *completed* bookings for the selected date and service
     $bookings = Booking::where('date', $date)
-        ->where('service_id', $serviceId)
         ->where('status', 'completed') // Only consider completed bookings
         ->get();
 
@@ -269,6 +293,9 @@ public function getAvailableSlots(Request $request)
 
     return response()->json($availableSlots); // Return available slots as JSON response
 }
+
+
+
 
 
 
